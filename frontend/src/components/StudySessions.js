@@ -5,10 +5,10 @@ function StudySessions() {
   const [sessions, setSessions] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/sessions/USER_ID')
-      .then(response => setSessions(response.data))
+    axios.get(`${apiBaseUrl}/api/tasks/USER_ID`)
+      .then(response => setTasks(response.data))
       .catch(error => console.log(error));
-  }, []);
+  }, [apiBaseUrl]);
 
   return (
     <div>

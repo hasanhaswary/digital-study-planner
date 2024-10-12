@@ -5,11 +5,11 @@ function Tasks() {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/tasks/USER_ID')
+    axios.get(`${apiBaseUrl}/api/tasks/USER_ID`)
       .then(response => setTasks(response.data))
       .catch(error => console.log(error));
-  }, []);
-
+  }, [apiBaseUrl]);
+  
   return (
     <div>
       <h1>Tasks</h1>

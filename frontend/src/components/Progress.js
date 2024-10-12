@@ -5,10 +5,10 @@ function Progress() {
   const [progress, setProgress] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/progress/USER_ID')
-      .then(response => setProgress(response.data))
+    axios.get(`${apiBaseUrl}/api/tasks/USER_ID`)
+      .then(response => setTasks(response.data))
       .catch(error => console.log(error));
-  }, []);
+  }, [apiBaseUrl]);
 
   return (
     <div>
